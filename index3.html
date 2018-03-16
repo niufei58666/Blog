@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+    <link rel="stylesheet" href="css/index3.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <script src="js/animate.js"></script>
+    <script src="js/rem.js"></script>
+    <script src="js/swiper.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="title animated flip">牛斐的个人博客</div>
+        <nav>
+            <a href="">
+                <i class="iconfont">&#xe66f;</i>
+            </a>
+            <a href="">
+                <i class="iconfont a1">&#xe712;</i>
+            </a>
+            <input type="text" placeholder="搜索文章">
+            <a href="">
+                <i class="iconfont">&#xe61b;</i>
+            </a>
+
+        </nav>
+    </header>
+    <ul class="classify">
+        <li class="animated rotateIn">
+            <a href="">HTML</a>
+        </li>
+        <li>
+            <a href="">CSS</a>
+        </li>
+        <li>
+            <a href="">JavaScript</a>
+        </li>
+        <li>
+            <a href="">JQuery</a>
+        </li>
+        <li>
+            <a href="">PHP</a>
+        </li>
+    </ul>
+    <section class="content">
+        <div class="title1">
+            <i class="iconfont">&#xe66f;</i>
+            <span>笔记</span>
+            <i class="iconfont">&#xe646;</i>
+            <span>HTML</span>
+            <i class="iconfont">&#xe646;</i>
+            <span>利用Sass自动生成padding和margin边距样式</span>
+        </div>
+        <div class="title2">
+            <h2>利用Sass自动生成padding和margin边距样式</h2>
+            <div>
+                <i class="iconfont">&#xe622;</i>
+                <a href="">HTML</a>
+                <i class="iconfont">&#xe629;</i>
+                <a href="">牛斐</a>
+                <i class="iconfont">&#xe6b5;</i>
+                <a href="">1年前 (2017-10-29)</a>
+                <i class="iconfont">&#xe62f;</i>
+                <a href="">1647浏览</a>
+                <i class="iconfont">&#xe678;</i>
+                <a href="">评论</a>
+            </div>
+        </div>
+        <div class="con1">
+            <h2>需求分析</h2>
+            <!--<pre></pre>-->
+            <p>有需求才有动力！</p>
+            <p>写CSS的时候，你经常会遇到要设置一个小边距，比如设置：</p>
+            <p>所有内边距10px，外左边距20px，内右边距0，上下内边距50px，外左右边距自动….</p>
+            <p>而你是不是又不想自己单独为它们定义一个class，然后把padding, margin之类的写进去？</p>
+            <p>举例如下：</p>
+            <p>现在我有两个p标签，我想让这两个p标签中间相隔10px，那是不是需要？</p>
+            <img src="img/dm1.png" alt="">
+        </div>
+        <div class="con1">
+            <h2>实例分析</h2>
+            <p>通过上面的层级关系和简称划分，我们可以对他们进行自由组合，形成一个个class样式。比如：
+
+                .p-t-xs 即为上内边距是5px，.p-h-md 即为左右内边距是20px，.p-b-n-lg 即为下内边距是-30px，
+
+                .p-r-xxl 即为右内边距是50px，.p-t 即为上内边距为正常边距15px（正常边距省略即可），.p-n 即为内边距是-15px。
+
+                .p-v-n 即为上下内边距是-15px，.m-h-auto 即为水平左右外边距是自动auto, .m-t-ii 即为上外边距是初始化initial。
+
+                .m-r-none 即为右外边距是0。
+
+                怎样？通过这样的定义，能不能找出规律？即
+
+                第一个字母p或者m，代表padding或者margin。
+
+                第二个字母代表方向，t上方、b下方、l左方、r右方、v上方和下方、h左方和右方。
+
+                第三个（组）字母代表距离，xs是+2px，n-lg是-30px，空是自动边距15px，n是反向正常值-15px，ii是初始化，none是无，auto是自动边距。
+
+                怎样？有了这些定义，我们是不是就能非常方便地设置边距样式了？刚才的边距怎样解决？很简单，只需要</p>
+            <img src="img/dm2.png" alt="">
+            <p>如果一个网页里有很多样式，那只需要把整个样式文件引入，自由地添加class就好了。</p>
+        </div>
+        <div class="con1">
+            <h2>编写SASS</h2>
+            <p>这么多组合呢？写CSS不累死了？检查也不好检查。
+
+                怎么办？上Sass！
+
+                首先我们先定义一层映射，边距映射：</p>
+            <img src="img/dm3.png" alt="">
+            <p>这里定义了所有的边距和它的简称。
+
+                然后我们尝试写一下padding的函数，遍历一下：
+            </p>
+            <img src="img/dm4.png" alt="">
+            <p>这样我们就生成了所有padding边距的设置。
+
+                好接下来设置下水平和垂直边距吧，这个就需要两句话了，比如设置水平你得写padding-left 和 padding-right。
+
+                有的小伙伴说了，可以直接写一个啊，比如 padding: 0 20px 就可以，不过这样你同时设置了上下边距。即便上下边距我们设置成inherit或者什么其他的，那也多多少少在某种情况下产生影响。
+
+                所以这里我们直接分开，而且就算不分开，你之前的映射就要修改，还是麻烦的。
+
+                所以这里定义如下：</p>
+        </div>
+    </section>
+    <!--返回顶部开始-->
+    <div class="top">
+        <i class="iconfont">&#xe63a;</i>
+    </div>
+    <!--返回顶部结束-->
+    <!--底部开始-->
+    <footer>
+        <a href="index.html">首页</a>
+        <a href="index2.html">笔记</a>
+        <a href="index1.html">联系我</a>
+    </footer>
+
+
+
+    <!--底部结束-->
+</body>
+</html>
+<script>
+    let a1=document.querySelector('.a1');
+    let a2=document.querySelector('.classify');
+    a1.onclick=function(){
+        animate(a2,{height:250},1000);
+    };
+    a1.onmouseleave=function(){
+        animate(a2,{height:0},1000);
+    };
+    let tops=document.querySelector(".top");
+    tops.onclick = function(){
+        animate(document.body,{scrollTop:0});
+        animate(document.documentElement,{scrollTop:0})
+    }
+
+</script>

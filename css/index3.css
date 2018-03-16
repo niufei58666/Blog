@@ -1,0 +1,177 @@
+@import "base.css";
+@font-face {
+    font-family: 'iconfont';  /* project id 590505 */
+    src: url('//at.alicdn.com/t/font_590505_xdst7ya1k8i79zfr.eot');
+    src: url('//at.alicdn.com/t/font_590505_xdst7ya1k8i79zfr.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_590505_xdst7ya1k8i79zfr.woff') format('woff'),
+    url('//at.alicdn.com/t/font_590505_xdst7ya1k8i79zfr.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_590505_xdst7ya1k8i79zfr.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family: 'iconfont';
+}
+i{
+    font-style: normal;
+}
+input:focus { outline: none; }
+body{
+    background: #fff;
+}
+header{
+    width: 100%;
+    height: 2rem;
+    background: #075498;
+    /*overflow: hidden;*/
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+header .title{
+    width: 100%;
+    height: 0.5rem;
+    color: #fff;
+    font-size: 0.34rem;
+    text-align: center;
+    line-height: 0.4rem;
+    margin-top: 0.4rem;
+}
+header nav{
+    width: 100%;
+    height: 0.5rem;
+    line-height: 0.5rem;
+    padding: 0 0.1rem;
+    box-sizing: border-box;
+    margin-top: 0.2rem;
+    display: flex;
+    justify-content: space-around;
+}
+header nav i{
+    color: #fff;
+    font-size: 0.26rem;
+    position: relative;
+}
+header nav input{
+    width: 70%;
+    height: 0.5rem;
+    border-radius: 0.1rem;
+    padding: 0.1rem;
+    box-sizing: border-box;
+}
+.classify{
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    margin-top: 2rem;
+    background: #EBE0E0;
+}
+.classify li{
+    width: 100%;
+    height: 1rem;
+    font-size: 0.26rem;
+    padding: 0 0.3rem;
+    box-sizing: border-box;
+    line-height: 1rem;
+    border-bottom: 0.01rem solid #ccc;
+}
+.classify li a{
+    color: #202020;
+}
+.content{
+    width: 100%;
+    padding: 0 0.3rem;
+    box-sizing: border-box;
+}
+.content .title1{
+    width: 100%;
+    padding: 0.2rem 0;
+    border-bottom: 1px solid #ccc;
+}
+.content .title1 i{
+    color: #00A67C;
+    font-size: 0.3rem;
+}
+.content .title1 span{
+    color: #000;
+    font-size: 0.3rem;
+}
+.content .title1 span:last-of-type{
+    color: #ccc;
+}
+.content .title2{
+    width: 100%;
+    padding: 0.2rem 0;
+    border-bottom: 1px solid #ccc;
+}
+.content .title2 h2{
+    color: #000;
+    font-size: 0.36rem;
+    line-height: 0.8rem;
+}
+.content .title2 div{
+    width: 100%;
+}
+.content .title2 div i{
+    display: inline-block;
+    color: #999;
+    font-size: 0.31rem;
+    margin-left: 0.4rem;
+    line-height: 0.6rem;
+}
+.content .title2 div i:first-of-type{
+    margin: 0;
+}
+.content .title2 div a{
+    display: inline-block;
+    color: #999;
+    font-size: 0.28rem;
+}
+.content .con1{
+    width: 100%;
+    margin-top: 0.3rem;
+}
+.content .con1:last-of-type{
+    margin-bottom: 0.7rem;
+}
+.content .con1 h2{
+    color: #000;
+    font-size: 0.36rem;
+    line-height: 0.8rem;
+}
+.content .con1 p{
+    color: #000;
+    font-size: 0.3rem;
+    line-height: 0.5rem;
+}
+.content .con1 img{
+    width: 100%;
+}
+.top{
+    width: 0.5rem;
+    height: 0.5rem;
+    position: fixed;
+    right: 0.2rem;
+    bottom: 2.5rem;
+    z-index: 1;
+
+}
+
+.top i{
+    font-size: 0.5rem;
+    color: skyblue;
+}
+footer{
+    width: 100%;
+    height: 0.7rem;
+    background: #075498;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    line-height: 0.7rem;
+}
+footer a{
+    color: #fff;
+    font-size: 0.34rem;
+}
